@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumina | Tu Carrito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+  <header class="navbar">
+    <div class="logo">LUMINA</div>
+    <nav class="nav-links">
+      <!-- ENLACES DE SALTO -->
+      <a href="index.html" class="nav-link">← Volver al Catálogo</a>
+      <a href="carrito.html" class="nav-link active">Carrito</a>
+    </nav>
+  </header>
+
+
+  <main class="container cart-page">
+    <div class="section-title">
+      <h2>Tu Carrito de Compras</h2>
+      <div class="divider"></div>
+    </div>
+
+
+    <div class="cart-layout">
+      <div class="table-container">
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Precio Unitario</th>
+              <th>Cantidad</th>
+              <th>Subtotal</th>
+            </tr>
+          </thead>
+          <tbody id="cart-items">
+            <!-- Se carga dinámicamente -->
+          </tbody>
+        </table>
+      </div>
+
+
+      <div class="checkout-summary">
+        <h3>Resumen del Pedido</h3>
+        <div class="summary-line">
+          <span>Envío</span>
+          <span>Gratis</span>
+        </div>
+        <div class="summary-line total-line">
+          <span>Total</span>
+          <span>$<span id="cart-total">0</span></span>
+        </div>
+        <button class="btn btn-block" onclick="finalizarCompra()">Proceder al Pago</button>
+        <button class="btn-link" onclick="vaciarCarrito()">Vaciar Carrito</button>
+      </div>
+    </div>
+  </main>
+
+
+  <script src="db.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", mostrarCarrito);
+  </script>
+</body>
+</html>
